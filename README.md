@@ -1,6 +1,6 @@
-# Calculators
+# MMM for grouped data Calculator Code
 
-# Frequency
+Frequency
 class_interval = []
 frequency = []
 mid_point = []
