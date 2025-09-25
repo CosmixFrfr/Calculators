@@ -26,15 +26,17 @@ def given_input(errormessage="Invalid Value. Please try again."):
         lower_boundary = lower - 0.5
         upper_boundary = upper + 0.5
         class_interval.append((lower_boundary, upper_boundary))
-        print(f"class interval: {class_interval}")
 
         freq = input_val("Frequency: ", int)
         frequency.append(freq)
-        print(f"frequency: {frequency}")
         
         if_continue = input_val("Continue? (Y for yes): ")
         if if_continue.upper() != "Y":
             break
+
+    combined = list(zip(class_interval, frequency))
+    combined.sort(key=lambda x: x[0][0])
+    class_interval[:], frequency[:] = zip(*combined)
 
     total_cf = 0
     for i in range(len(frequency)):
